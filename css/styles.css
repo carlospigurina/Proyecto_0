@@ -220,52 +220,45 @@ html{
   color: #0e153a;
   font-size: 12px;
 }
-
-span{
-  position: relative;
-  display: inline-flex;
+.button {
+  display: inline-block;
+  border-radius: 10px;
+  background-color: black;
+  border-color: white;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 15px;
+  padding: 10px;
   width: 120px;
-  height: 45px;
-}
-
-span a{
-  font-size: 12px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
   letter-spacing: 1px;
-  transform-style: preserve-3d;
-  transform: translateZ(-25px);
-  transition: transform .25s;
+  font-family: sans-serif;
 }
 
-span a:before,
-span a:after{
-  height: 45px;
-  width: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-  border-radius: 5px;
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
 }
 
-span a:before{
+.button span:after {
+  content: '\00bb';
   position: absolute;
-  content: "ENVIAR";
-  color: #fff;
-  background: #000;
-  transform: rotateY(0deg) translateZ(25px);
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
 }
 
-span a:after{
-  position: absolute;
-  content: "ENVIAR";
-  font-weight: bold;
-  color: #000;
-  transform: rotateX(90deg) translateZ(25px);
-  border: 2px solid white;
-  background: #fff;
+.button:hover span {
+  padding-right: 30px;
 }
 
-span a:hover{
-  transform: translateZ(-25px) rotateX(-90deg);
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
 }
 /* Fin de los Estilos del Login de la página (Entrega 1). */
