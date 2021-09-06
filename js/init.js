@@ -45,3 +45,9 @@ var getJSONData = function(url){
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
 });
+
+// Acá va el getItem
+let prueba = localStorage.getItem('nombre');
+let letraMay = prueba[0].toUpperCase();
+document.getElementById("usuario1").innerHTML = letraMay;
+//Termina el getItem

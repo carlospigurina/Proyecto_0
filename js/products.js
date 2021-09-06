@@ -11,14 +11,14 @@ function sortProducts(criteria, array){
     if (criteria === ORDER_ASC_BY_NAME)
     {
         result = array.sort(function(a, b) {
-            if ( a.name < b.name ){ return -1; }
-            if ( a.name > b.name ){ return 1; }
+            if ( a.cost < b.cost ){ return -1; }
+            if ( a.cost > b.cost ){ return 1; }
             return 0;
         });
     }else if (criteria === ORDER_DESC_BY_NAME){
         result = array.sort(function(a, b) {
-            if ( a.name > b.name ){ return -1; }
-            if ( a.name < b.name ){ return 1; }
+            if ( a.cost > b.cost ){ return -1; }
+            if ( a.cost < b.cost ){ return 1; }
             return 0;
         });
     }else if (criteria === ORDER_BY_PROD_COUNT){
@@ -41,8 +41,8 @@ function showProductsList(){
     for(let i = 0; i < currentProductsArray.length; i++){
         let product = currentProductsArray[i];
 
-        if (((minCount == undefined) || (minCount != undefined && parseInt(product.soldCount) >= minCount)) &&
-            ((maxCount == undefined) || (maxCount != undefined && parseInt(product.soldCount) <= maxCount))){
+        if (((minCount == undefined) || (minCount != undefined && parseInt(product.cost) >= minCount)) &&
+            ((maxCount == undefined) || (maxCount != undefined && parseInt(product.cost) <= maxCount))){
 
             htmlContentToAppend += `
             <a href="product-info.html" class="list-group-item list-group-item-action">
