@@ -262,3 +262,35 @@ html{
   right: 0;
 }
 /* Fin de los Estilos del Login de la página (Entrega 1). */
+
+dt{
+  font-size: 19px;
+}
+
+/* Estilos para las Estrellas*/
+.star-rating {
+  direction: rtl;
+  padding: 20px
+}
+
+.star-rating input[type=radio] {
+  display: none
+}
+
+.star-rating label {
+  color: rgb(133, 142, 192);
+  font-size: 20px;
+  padding: 0;
+  cursor: pointer;
+}
+
+.star-rating label:hover,
+.star-rating label:hover~label,
+.star-rating input[type=radio]:checked~label {
+  color: #ffbf00
+}
+
+.divImg {
+  width: 60%;
+}
+/*Fin para Estilos para las Estrellas*/

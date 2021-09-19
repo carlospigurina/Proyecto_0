@@ -17,6 +17,7 @@
 </head>
 
 <body>
+
   <nav class="site-header sticky-top py-1 bg-dark">
     <div class="container d-flex flex-column flex-md-row justify-content-between">
       <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
@@ -27,14 +28,111 @@
       <a class="py-2 d-none d-md-inline-block" href="my-profile.html" class="perfilUsuario" id="usuario1"></a>
     </div>
   </nav>
-  <div class="container p-5">
+  <main role="main">
+    <div class="container mt-5">
+      <div class="text-center p-4">
+        <h2>Descripción de la categoría</h2>
+        <p class="lead">Encontrarás aquí toda la información de la categoría seleccionada.</p>
+        <p class="small alert-warning py-3"><strong>Nota: </strong>por simplicidad, cualquiera sea la categoría
+          seleccionada previamente, siempre se visualizará la presente: <strong>Autos</strong>.</p>
+      </div>
+      <h3 id="productName"></h3>
+      <hr class="my-3">
+      <dl>
+        <dt>Descripción</dt>
+        <dd>
+          <p id="productDescription"></p>
+        </dd>
+
+        <dt>Costo del producto</dt>
+        <dd>
+          <p id="productCost"></p>
+        </dd>
+
+        <dt>Categoría</dt>
+        <dd>
+          <a id="productCategory" href="#"></a>
+        </dd>
+
+        <dt>Cantidad de vendidos</dt>
+        <dd>
+          <p id="productSoldCount"></p>
+        </dd>
+        
+        <div class="col-7">
+        <dt>Imágenes ilustrativas</dt>
+        <dd>
+          <div class="row text-center text-lg-left pt-2" id="productsImagesGallery">
+          </div>
+        </dd>
+        <br>
+        </div>
+        <br>
+
+        <dt>Comentarios</dt>
+        <dd>
+          <p id="contComment"></p>
+        </dd>
+
+        <div id="contenidoTexto">
+          <p class="ml-4">Calificación</p>
+          
+          <!-- Estrellas -->
+          <div class="star-rating" id="allStar">
+            <input class="sr" id="star-5" type="radio" name="rating" value="5" />
+            <label for="star-5" title="5 stars">
+              <i class="active fa fa-star"></i>
+            </label>
+  
+            <input class="sr" id="star-4" type="radio" name="rating" value="4" />
+            <label for="star-4" title="4 stars">
+              <i class="active fa fa-star"></i>
+            </label>
+  
+            <input class="sr" id="star-3" type="radio" name="rating" value="3" />
+            <label for="star-3" title="3 stars">
+              <i class="active fa fa-star"></i>
+            </label>
+  
+            <input class="sr" id="star-2" type="radio" name="rating" value="2" />
+            <label for="star-2" title="2 stars">
+              <i class="active fa fa-star"></i>
+            </label>
+  
+            <input class="sr" id="star-1" type="radio" name="rating" value="1" checked />
+            <label for="star-1" title="1 star">
+              <i class="active fa fa-star"></i>
+            </label>
+  
+          </div>
+
+        <!-- Texto -->
+        <textarea name="" id="textoComentario" cols="30" rows="5" placeholder="Agregar comentarios"></textarea>
+        <br>
+        <br>
+
+        <!-- Boton Submit -->
+        <br>
+        <br>
+        <input type="submit" value="Enviar" id="botonEnviar">
+        <br>
+        <br>
+
+        </div>
+
+
+      </dl>
+      <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Volver a productos</a>
+    </div>
+  </main>
+  <!--<div class="container p-5">
     <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
       <h4 class="alert-heading">¡A trabajar! :)</h4>
       <p>Esta sección corresponde a: Entrega 3 (Fecha de entrega: 19/09/2021) y Entrega 4 (Fecha de entrega: 03/10/2021).</p>
       <hr>
       <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
     </div>
-  </div>
+  </div> -->
   <footer class="text-muted">
     <div class="container">
       <p class="float-right">
