@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function(e){
             // Acá va el setItem
             localStorage.setItem('nombre', nombre);
             // Termina el setItem
-            location.replace("index.html");
+            location.replace("home.html");
         } else {
             alert ("Debe completar los campos.");
         }

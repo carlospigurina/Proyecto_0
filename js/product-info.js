@@ -1,6 +1,35 @@
 var product = {};
 var comentariosArray = [];
 var carusel = {};
+var relatedProducts = {};
+
+//Función que muestra la información de los productos relacionados (nombre,descripción, imágen).
+function showRelatedProducts(arrayProduct) {
+
+  let htmlRelatedProduct = "";
+
+  for (let item of arrayProduct) {
+
+    let relatedProduct = relatedProducts[item];
+
+    htmlRelatedProduct += `
+        <div class="card mr-3 h-10 w-25">
+          <a href="#" class=" custom-card">
+            <img class="bd-placeholder-img card-img-top" src="${relatedProduct.imgSrc}">
+            <h3 class="m-3">${relatedProduct.name}</h3>
+            <div class="card-body">
+              <p class="card-text">${relatedProduct.description}</p>
+            </div>
+            <div class="card-body">
+              <p class="card-text">${relatedProduct.currency} ${relatedProduct.cost}</p>
+            </div>
+          </a>
+        </div>`;
+
+  };
+  //Se incorpora la información de los productos relacionados dentro del HTML.
+  document.getElementById("relatedProduct").innerHTML = htmlRelatedProduct;
+}
 
 // Función que muestra la galeria de imagenes de los productos y comentarios en general.
 function showProductsImagesGallery(array) {
@@ -102,6 +131,18 @@ document.addEventListener("DOMContentLoaded", function (e) {
             //Ejecuta la función "showProductsImagesGallery" para que imprima en el HTML las imagenes del Producto y la Lista o Array comentarios.
             showProductsImagesGallery(product.images, comentariosArray);
           };
+
+          getJSONData(PRODUCTS_URL).then(function (resultObj) {
+
+            if (resultObj.status === "ok") {
+
+              relatedProducts = resultObj.data;
+
+            };
+
+            showRelatedProducts(product.relatedProducts)
+
+          });
   
         });
   

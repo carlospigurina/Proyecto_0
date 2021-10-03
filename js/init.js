@@ -40,14 +40,24 @@ var getJSONData = function(url){
     });
 }
 
+
+// Acá va el getItem
+let prueba = localStorage.getItem('nombre');
+// let prueba2 = prueba.toUpperCase();
+document.getElementById("usuario1").innerHTML = prueba;
+//Termina el getItem
+
+
+
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
-});
 
-// Acá va el getItem
-let prueba = localStorage.getItem('nombre');
-let letraMay = prueba[0].toUpperCase();
-document.getElementById("usuario1").innerHTML = letraMay;
-//Termina el getItem
+  document.getElementById("salir").addEventListener("click", function(e) {
+
+    localStorage.removeItem("nombre");
+    location.replace("index.html");
+
+  });
+});
