@@ -5,6 +5,7 @@ var currentProductsArray = [];
 var currentSortCriteria = undefined;
 var minCount = undefined;
 var maxCount = undefined;
+var buscar = undefined;
 
 function sortProducts(criteria, array){
     let result = [];
@@ -43,24 +44,25 @@ function showProductsList(){
 
         if (((minCount == undefined) || (minCount != undefined && parseInt(product.cost) >= minCount)) &&
             ((maxCount == undefined) || (maxCount != undefined && parseInt(product.cost) <= maxCount))){
+                
+                if (buscar == undefined || product.name.toLowerCase().indexOf(buscar) != -1 || product.description.toLowerCase().indexOf(buscar) != -1) {
 
-            htmlContentToAppend += `
-            <a href="product-info.html" class="list-group-item list-group-item-action">
-                <div class="row">
-                    <div class="col-3">
-                        <img src="` + product.imgSrc + `" alt="` + product.description + `" class="img-thumbnail">
-                    </div>
-                    <div class="col">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h4 class="mb-1">`+ product.name +`</h4>
-                            <small class="text-muted">` + product.soldCount + ` artículos</small>
+
+                    htmlContentToAppend += `
+                        <a href ="product-info.html" class="mt-5 col-sm-12 col-md-6 list-group-item-action mb-4 shadow-sm"
+                        <div class="col-6">
+                            <img class="bd-placeholder-img card-img-top"  src=${product.imgSrc}>
+                            <div class="card-body">
+                                <h3 class="m-3">${product.name}</h3>
+                                <p class="card-text">${product.description}</p>
+                                <p class="card-text">${product.currency} ${product.cost}</p>
+                                <small class="text-muted"> ${product.soldCount} artículos</small>
+                            </div>
+                            </a>
                         </div>
-                        <p class="mb-1">` + product.description + `</p>
-                        <p class="mb-1">` + product.currency + " " + product.cost + `</p>
-                    </div>
-                </div>
-            </a>
-            `
+                    `
+            }
+
         }
 
         document.getElementById("prod-list-container").innerHTML = htmlContentToAppend;
@@ -134,4 +136,11 @@ document.addEventListener("DOMContentLoaded", function(e){
 
         showProductsList();
     });
+
+    document.getElementById("buscador").addEventListener("input", function(e){
+
+        buscar = document.getElementById("buscador").value.toLowerCase();
+
+        showProductsList();
+    })
 });

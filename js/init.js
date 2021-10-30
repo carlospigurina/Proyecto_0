@@ -58,6 +58,7 @@ document.addEventListener("DOMContentLoaded", function(e){
   document.getElementById("salir").addEventListener("click", function(e) {
 
     localStorage.removeItem("nombre");
+    localStorage.removeItem("perfil");
     location.replace("index.html");
 
   });
